@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "@mdx-js/react": "^2.2.1",
-    "webpack": "^5.75.0"
+    "webpack": "^5.76.0"
   }
 }
