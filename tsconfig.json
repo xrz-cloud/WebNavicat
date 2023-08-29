@@ -21,7 +21,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "config": ["site.config.js"]
+      "config": ["site.config.ts"]
     },
     "types": ["node"]
   },
