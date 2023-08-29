@@ -71,7 +71,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: 'wrap', properties: { class: 'anchor' } }],
         rehypeKatex,
-      ]
+      ] as any
 
       return options
     },
