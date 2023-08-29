@@ -38,7 +38,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 # 个人隐私文件
-posts/*
+# posts/*
 !posts/2023-04-27-mdx-syntax-guide.mdx
 !posts/2023-04-27-mdx-syntax-basic.mdx
 !posts/2023-04-27-mdx-syntax-code-block.mdx
@@ -47,5 +47,5 @@ posts/*
 !posts/2023-04-27-mdx-syntax-code-playground.mdx
 !posts/2023-04-27-mdx-syntax-math-equations.mdx
 post-helpers
-public/images/*
+# public/images/*
 !public/images/mdx-test.webp
