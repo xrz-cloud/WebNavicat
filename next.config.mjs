@@ -12,6 +12,7 @@ const config = {
   },
   experimental: {
     serverComponentsExternalPackages: ['fetch-site-metadata'],
+    mdxRs: true,
   },
 }
 
