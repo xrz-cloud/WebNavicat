@@ -1,6 +1,7 @@
 {
   "nav.home": "Home",
   "nav.tags": "Tags",
+  "nav.toolbox": "Toolbox",
   "nav.about": "About",
 
   "post-page.last-updated": "Last Updated: {{ date }}",

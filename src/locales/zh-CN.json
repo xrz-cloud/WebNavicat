@@ -1,6 +1,7 @@
 {
   "nav.home": "首页",
   "nav.tags": "标签",
+  "nav.toolbox": "工具箱",
   "nav.about": "关于",
 
   "post-page.last-updated": "最后更新于 {{ date }}",

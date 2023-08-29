@@ -30,8 +30,8 @@ interface ConfigMarkdown {
 
 const config: Config = {
   name: 'xrz',
-  title: 'xrz',
-  description: '没用的文章分享和也许有用的小工具',
+  title: 'xrz | Less Blogs | More Tools',
+  description: '没用的文章分享和也许有用的小工具。来都来了，去看看工具箱里有没有你想要的。',
   avatar:
     'https://xlog.app/cdn-cgi/image/width=256,quality=75,format=auto,onerror=redirect/https://ipfs.xlog.app/ipfs/bafkreiaw7gktddbd33ygmnbfw4stnqfstlyf57qmlvwrnoszrcrh4tjwoi',
   logo: '/logo.svg',
@@ -39,14 +39,10 @@ const config: Config = {
   // icon 请在 src/components/Splash/index.tsx 中修改
   socials: [
     { label: 'GitHub', link: 'https://github.com/xrz-cloud' },
-    { label: 'GitHub', link: 'https://github.com/bili-vd-bak' },
     { label: 'xlog', link: 'https://xrzyun.eu.org/' },
     { label: '友链', link: '/blogroll' },
   ],
-  blogroll: [
-    { name: '赖同学', link: 'https://www.laibh.com' },
-    { name: '鯊手', link: 'https://www.cnblogs.com/Scooby' },
-  ],
+  blogroll: [{ name: 'My GitHub | bili-vd-bak 系列仓库', link: 'https://github.com/bili-vd-bak' }],
   language: 'zh-CN', // en | zh-CN
   toc: true, // table of content
   adjacentPosts: true, // prev next links

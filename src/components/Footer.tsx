@@ -5,7 +5,11 @@ const Footer = () => {
   return (
     <div className="flex flex-col items-center mt-16 mb-6 text-sm">
       <span className="font-medium">
-        Built with <a href="https://nextjs.org" className="text-primary no-underline">Next.js</a> • Deployed on <a href="https://vercel.com" className="text-primary">Vercel</a>
+        Built with{' '}
+        <a href="https://nextjs.org" className="text-primary no-underline">
+          Next.js
+        </a>{' '}
+        • Deployed on Vercel/CloudFlare Pages/Netlify
       </span>
       <div className="mt-2 text-zinc-500">
         &copy;{new Date().getFullYear()}&nbsp;{config.name}
