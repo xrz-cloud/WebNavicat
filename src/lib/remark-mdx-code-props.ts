@@ -1,14 +1,13 @@
 import type { Plugin } from 'unified'
-import { Code, Root } from 'mdast'
 import { visit } from 'unist-util-visit'
 import { Parser } from 'acorn'
 import jsx from 'acorn-jsx'
 
 const parser = Parser.extend(jsx())
 
-const remarkMdxCodeProps: Plugin<[], Root> = () => {
+const remarkMdxCodeProps: Plugin<[], any> = () => {
   return tree => {
-    visit(tree, 'code', (node: Code, index, parent) => {
+    visit(tree, 'code', (node: any, index, parent) => {
       const code = JSON.stringify(`${node.value}`)
       const value = `<code className="language-${node.lang || 'text'}" ${
         node.meta || ''

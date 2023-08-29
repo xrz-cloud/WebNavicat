@@ -1,12 +1,11 @@
 import { visit } from 'unist-util-visit'
 import type { Plugin } from 'unified'
-import type { Image, Root } from 'mdast'
 import { getImageInfo } from '@/utils/image'
 
-const remarkImageInfo: Plugin<[], Root> = () => {
+const remarkImageInfo: Plugin<[], any> = () => {
   return async tree => {
     const promises: (() => Promise<void>)[] = []
-    visit(tree, 'image', (node: Image) => {
+    visit(tree, 'image', (node: any) => {
       promises.push(async () => {
         const { src, width, height, lqip } = await getImageInfo(node.url)
 

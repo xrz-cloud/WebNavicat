@@ -94,7 +94,7 @@ const Post: React.FC<PostProps> = props => {
   const headings = useHeadings([code])
   const Component = useMemo(() => getMDXComponent(code), [code])
   const { readingTime } = useMemo(
-    () => getMDXExport<{ readingTime: PostReadingTime }, unknown>(code),
+    () => getMDXExport(code),
     [code],
   )
 

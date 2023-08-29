@@ -1,17 +1,16 @@
 import { visit } from 'unist-util-visit'
 import type { Plugin } from 'unified'
-import { Paragraph, Root } from 'mdast'
 import fetchSiteMetadata from 'fetch-site-metadata'
 import { h } from 'hastscript'
 
-const remarkLinkCard: Plugin<[], Root> = () => {
+const remarkLinkCard: Plugin<[], any> = () => {
   return async tree => {
     // 一个单独的 link 的 mdast 有什么特征？
     // 1. parent 是一个 paragraph
     // 2. parent 的 children 长度为 1，且该 child 的 type 为 text
     // 3. 不能在 list item 中
     const promises: (() => Promise<void>)[] = []
-    visit(tree, 'paragraph', (node: Paragraph, index, parent) => {
+    visit(tree, 'paragraph', (node: any, index, parent) => {
       const children = node.children || []
       if (
         children.length === 1 &&

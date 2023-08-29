@@ -2,7 +2,6 @@ import { visit } from 'unist-util-visit'
 import type { Plugin } from 'unified'
 import { h } from 'hastscript'
 import { ContainerDirective } from 'mdast-util-directive'
-import { Root } from 'mdast'
 
 // 自定义提示块
 //
@@ -18,9 +17,9 @@ import { Root } from 'mdast'
 // 这是一个危险警告
 // :::
 
-const remarkAdmonitions: Plugin<[], Root> = () => {
-  return tree => {
-    visit(tree, 'containerDirective', (node: ContainerDirective) => {
+const remarkAdmonitions: any = () => {
+  return (tree: any) => {
+    visit(tree, 'containerDirective', (node: any) => {
       if (!['tip', 'warning', 'danger'].includes(node.name)) return
 
       const data = node.data || (node.data = {})

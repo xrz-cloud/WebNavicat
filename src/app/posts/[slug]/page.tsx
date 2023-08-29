@@ -65,7 +65,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         remarkMdxCodeProps,
         remarkLinkCard,
         remarkImageInfo,
-      ]
+      ] as any
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
