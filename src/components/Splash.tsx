@@ -36,7 +36,7 @@ const Splash = () => {
                 title={social.label}
                 aria-label={social.label}
               >
-                {SOCIAL_ICONS[social.label]}
+                {SOCIAL_ICONS[social.label] || <Friends className="text-lg" aria-hidden />}
               </Link>
             ))}
           </div>
