@@ -5,7 +5,8 @@ import Artplayer from 'artplayer'
 import { md5 } from 'hash-wasm'
 import artplayerPluginDanmuku from 'artplayer-plugin-danmuku'
 import { FFmpeg } from '@ffmpeg/ffmpeg'
-import { fetchFile, toBlobURL } from '@ffmpeg/util'
+import { downloadWithProgress, fetchFile, toBlobURL } from '@ffmpeg/util'
+import { get, set } from 'idb-keyval'
 
 const getFileHash = async (buffer: ArrayBuffer) => {
   // 计算前 16MB 的 MD5
@@ -103,7 +104,7 @@ export default function Home() {
 
   const load = async () => {
     setIsLoading(true)
-    const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12.2/dist/umd'
+    const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12/dist/umd'
     // const baseURL = "https://fastly.jsdelivr.net/npm/@ffmpeg/core@0.12.2/dist/umd";
     // const baseURL = "http://localhost:3000/ffmpeg/umd";
     const ffmpeg = ffmpegRef.current
@@ -113,12 +114,24 @@ export default function Home() {
     })
     // toBlobURL is used to bypass CORS issue, urls with the same
     // domain can be used directly.
+    let hasUpdatedWasm = 0
+    async function cacheWasm() {
+      await set('ffmpeg-core.wasm', await downloadWithProgress(`${baseURL}/ffmpeg-core.wasm`))
+      hasUpdatedWasm = 1
+    }
+    const b = ((await get('ffmpeg-core.wasm')) as ArrayBuffer) || null || undefined
+    if (!b) await cacheWasm()
     await ffmpeg.load({
       coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
-      wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+      wasmURL: await toBlobURL(
+        b ? window.URL.createObjectURL(new Blob([b])) : `${baseURL}/ffmpeg-core.wasm`,
+        'application/wasm',
+      ),
+      // workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'text/javascript'),
     })
     setLoaded(true)
     setIsLoading(false)
+    if (hasUpdatedWasm === 0) await cacheWasm()
   }
 
   const eSub = async (url: File) => {

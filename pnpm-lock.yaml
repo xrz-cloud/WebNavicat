@@ -56,6 +56,9 @@ dependencies:
   hastscript:
     specifier: ^7.2.0
     version: registry.npmmirror.com/hastscript@7.2.0
+  idb-keyval:
+    specifier: ^6.2.1
+    version: registry.npmmirror.com/idb-keyval@6.2.1
   lodash:
     specifier: ^4.17.21
     version: registry.npmmirror.com/lodash@4.17.21
@@ -3142,6 +3145,12 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       safer-buffer: registry.npmmirror.com/safer-buffer@2.1.2
+    dev: false
+
+  registry.npmmirror.com/idb-keyval@6.2.1:
+    resolution: {integrity: sha512-8Sb3veuYCyrZL+VBt9LJfZjLUPWVvqn8tG28VqYNFCo43KHcKuq+b4EiXGeuaLAQWL2YmyDgMp2aSpH9JHsEQg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/idb-keyval/-/idb-keyval-6.2.1.tgz}
+    name: idb-keyval
+    version: 6.2.1
     dev: false
 
   registry.npmmirror.com/ieee754@1.2.1:

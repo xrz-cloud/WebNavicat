@@ -29,6 +29,7 @@
     "hash-wasm": "^4.9.0",
     "hast-util-to-html": "^8.0.4",
     "hastscript": "^7.2.0",
+    "idb-keyval": "^6.2.1",
     "lodash": "^4.17.21",
     "mdast": "^3.0.0",
     "mdast-util-directive": "^3.0.0",
