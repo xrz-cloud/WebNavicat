@@ -34,7 +34,7 @@
     "mdast": "^3.0.0",
     "mdast-util-directive": "^3.0.0",
     "mdx-bundler": "^9.2.1",
-    "next": "13.4.19",
+    "next": "13.5.1",
     "next-themes": "^0.2.1",
     "nextjs-toploader": "^1.6.4",
     "plaiceholder": "^3.0.0",
