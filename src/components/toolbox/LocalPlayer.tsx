@@ -104,9 +104,9 @@ export default function Home() {
 
   const load = async () => {
     setIsLoading(true)
-    const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12/dist/umd'
+    // const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12/dist/umd'
     // const baseURL = "https://fastly.jsdelivr.net/npm/@ffmpeg/core@0.12.2/dist/umd";
-    // const baseURL = "http://localhost:3000/ffmpeg/umd";
+    const baseURL = '/ffmpeg/umd'
     const ffmpeg = ffmpegRef.current
     ffmpeg.on('log', ({ message }) => {
       if (messageRef.current) messageRef.current.innerHTML = message
