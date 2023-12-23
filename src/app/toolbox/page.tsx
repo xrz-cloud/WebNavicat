@@ -21,6 +21,12 @@ const tools = [
     external: false,
   },
   {
+    name: "MiBand 7 电子书APP生成 | xrz",
+    desc: "making...",
+    href: "/toolbox/miband7ebook",
+    external: false,
+  },
+  {
     name: "Bili漫游服务端(TypeScript) - HKG | bili-vd-bak",
     desc: "- hk.bili.xrzyun.eu.org",
     href: "https://hk.bili.xrzyun.eu.org",

@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@ffmpeg/ffmpeg':
-    specifier: ^0.12.9
-    version: 0.12.9
+    specifier: ^0.12.1
+    version: 0.12.1
   '@ffmpeg/util':
     specifier: ^0.12.1
     version: 0.12.1
@@ -18,8 +18,8 @@ dependencies:
     specifier: ^0.58.0
     version: 0.58.0
   artplayer:
-    specifier: ^5.0.9
-    version: 5.0.9
+    specifier: ^5.1.0
+    version: 5.1.0
   artplayer-plugin-danmuku:
     specifier: ^5.0.1
     version: 5.0.1
@@ -30,8 +30,8 @@ dependencies:
     specifier: ^4.11.0
     version: 4.11.0
   idb-keyval:
-    specifier: ^6.2.1
-    version: 6.2.1
+    specifier: ^6.1.0
+    version: 6.1.0
   next:
     specifier: ^14.0.4
     version: 14.0.4(@babel/core@7.23.6)(react-dom@18.2.0)(react@18.2.0)
@@ -630,9 +630,9 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@ffmpeg/ffmpeg@0.12.9:
-    resolution: {integrity: sha512-0UB7e8+nL9t8tBjQzSgh2dbA5XycLfL2nkR+4dP3HB4Dmog8fKeSRZpAVX9dT8Q9EJcBwJDR2dRL/0bt5UCiuQ==, tarball: https://registry.npmmirror.com/@ffmpeg/ffmpeg/-/ffmpeg-0.12.9.tgz}
-    engines: {node: '>=18.x'}
+  /@ffmpeg/ffmpeg@0.12.1:
+    resolution: {integrity: sha512-aKg35z/a/DJIZNtfYHsKd+oJwoQAahU+H8V+TI4MJI8ewMwfyLpnQoD0bqAuLI4ZePORppDjv1CgUyvmJagI4g==, tarball: https://registry.npmmirror.com/@ffmpeg/ffmpeg/-/ffmpeg-0.12.1.tgz}
+    engines: {node: '>=18.17.0'}
     dependencies:
       '@ffmpeg/types': 0.12.2
     dev: false
@@ -1448,8 +1448,8 @@ packages:
     resolution: {integrity: sha512-b6/Y4/+X0rNmnqS5+zzQgow+WW4iVT8eFv4LAUzJgIyORIcf5Gn00Dy0PZ+kwGb1VJy0CUCRK6gVVvh0tWsRAg==, tarball: https://registry.npmmirror.com/artplayer-plugin-danmuku/-/artplayer-plugin-danmuku-5.0.1.tgz}
     dev: false
 
-  /artplayer@5.0.9:
-    resolution: {integrity: sha512-IM/DShYdmKFEA9jl08LYbTK2Jfz9s7qIjEH0xWjnxvVArUKZZKcoqwr6i54U0c4grtc/Uvb4wtCd78kvtSVlgw==, tarball: https://registry.npmmirror.com/artplayer/-/artplayer-5.0.9.tgz}
+  /artplayer@5.1.0:
+    resolution: {integrity: sha512-dLFI3hfGxU/9/WihyntwSIYIgWgU9SkQTT/gIhHzrUTf9H4yb+sCM6f2Zc+jh1S1+iCwNI4lq73fL+ucpMK5ew==, tarball: https://registry.npmmirror.com/artplayer/-/artplayer-5.1.0.tgz}
     dependencies:
       option-validator: 2.0.6
     dev: false
@@ -2507,8 +2507,10 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==, tarball: https://registry.npmmirror.com/human-signals/-/human-signals-2.1.0.tgz}
     engines: {node: '>=10.17.0'}
 
-  /idb-keyval@6.2.1:
-    resolution: {integrity: sha512-8Sb3veuYCyrZL+VBt9LJfZjLUPWVvqn8tG28VqYNFCo43KHcKuq+b4EiXGeuaLAQWL2YmyDgMp2aSpH9JHsEQg==, tarball: https://registry.npmmirror.com/idb-keyval/-/idb-keyval-6.2.1.tgz}
+  /idb-keyval@6.1.0:
+    resolution: {integrity: sha512-u/qHZ75rlD3gH+Zah8dAJVJcGW/RfCnfNrFkElC5RpRCnpsCXXhqjVk+6MoVKJ3WhmNbRYdI6IIVP88e+5sxGw==, tarball: https://registry.npmmirror.com/idb-keyval/-/idb-keyval-6.1.0.tgz}
+    dependencies:
+      safari-14-idb-fix: 3.0.0
     dev: false
 
   /ignore@5.3.0:
@@ -3428,6 +3430,10 @@ packages:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==, tarball: https://registry.npmmirror.com/run-parallel/-/run-parallel-1.2.0.tgz}
     dependencies:
       queue-microtask: 1.2.3
+
+  /safari-14-idb-fix@3.0.0:
+    resolution: {integrity: sha512-eBNFLob4PMq8JA1dGyFn6G97q3/WzNtFK4RnzT1fnLq+9RyrGknzYiM/9B12MnKAxuj1IXr7UKYtTNtjyKMBog==, tarball: https://registry.npmmirror.com/safari-14-idb-fix/-/safari-14-idb-fix-3.0.0.tgz}
+    dev: false
 
   /safe-array-concat@1.0.1:
     resolution: {integrity: sha512-6XbUAseYE2KtOuGueyeobCySj9L4+66Tn6KQMOPQJrAJEowYKW/YR/MGJZl7FdydUdaFu4LYyDZjxf4/Nmo23Q==, tarball: https://registry.npmmirror.com/safe-array-concat/-/safe-array-concat-1.0.1.tgz}

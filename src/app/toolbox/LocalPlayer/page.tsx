@@ -1,3 +1,4 @@
+"use client";
 import LP from "./main";
 
 export default function lps() {

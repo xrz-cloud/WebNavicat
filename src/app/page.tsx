@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
 
-export async function GHList() {
+async function GHList() {
   const tree_sha = await fetch(
     "https://api.github.com/repos/xrz-cloud/blog/branches/main"
   )

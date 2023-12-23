@@ -110,7 +110,7 @@ export default function Home() {
     // const baseURL = "https://fastly.jsdelivr.net/npm/@ffmpeg/core@0.12.2/dist/umd";
     // const baseURL = '/ffmpeg/umd'
     const ffmpeg = ffmpegRef.current;
-    ffmpeg.on("log", ({ message }) => {
+    ffmpeg.on("log", ({ message }: { message: string }) => {
       if (messageRef.current) messageRef.current.innerHTML = message;
       console.log(message);
     });

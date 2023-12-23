@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh-CN" scrollbar="~ rounded">
+    <html lang="zh-CN" className="scrollbar scrollbar-rounded">
       {/* <body className={inter.className}>{children}</body> */}
       {/* <div>{children}</div> */}
       <body
