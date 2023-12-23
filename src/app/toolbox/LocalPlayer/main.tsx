@@ -106,7 +106,7 @@ export default function Home() {
 
   const load = async () => {
     setIsLoading(true);
-    const baseURL = "https://unpkg.com/@ffmpeg/core@0.12/dist/umd";
+    const baseURL = "https://unpkg.com/@ffmpeg/core@0.12/dist/esm";
     // const baseURL = "https://fastly.jsdelivr.net/npm/@ffmpeg/core@0.12.2/dist/umd";
     // const baseURL = '/ffmpeg/umd'
     const ffmpeg = ffmpegRef.current;
@@ -197,6 +197,8 @@ export default function Home() {
 
     setPlayer(newPlayer);
 
+    get("DoNotUpdate").then((val) => setDoNotUpdate(val));
+
     return () => {
       if (newPlayer?.destroy) {
         newPlayer.destroy();
@@ -252,8 +254,6 @@ export default function Home() {
       } ${match.episodeTitle} -> ${comments.length} 条弹幕`
     );
   };
-
-  get("DoNotUpdate").then((val) => setDoNotUpdate(val));
 
   return (
     <main

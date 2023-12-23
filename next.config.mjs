@@ -17,7 +17,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/toolbox/LocalPlayer",
+        source: "/_next/static/",
         headers: [
           {
             key: "Cross-Origin-Opener-Policy",
