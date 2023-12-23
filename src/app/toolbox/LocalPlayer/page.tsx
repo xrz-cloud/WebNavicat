@@ -1,5 +1,6 @@
 "use client";
 import LP from "./main";
+import NoSSR from "@/components/NoSSR";
 
 export default function lps() {
   return (
@@ -35,7 +36,9 @@ export default function lps() {
       <h2>工具</h2>
       <div style={{ overflow: "auto" }}>
         手机端可滑动本行文字调整播放器位置，全屏(横屏)以取得正确字幕、弹幕位置。
-        <LP />
+        <NoSSR>
+          <LP />
+        </NoSSR>
       </div>
     </div>
   );

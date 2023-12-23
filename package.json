@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ffmpeg/ffmpeg": "^0.12.1",
+    "@ffmpeg/ffmpeg": "^0.12.9",
     "@ffmpeg/util": "^0.12.1",
     "@unocss/postcss": "^0.58.0",
     "@unocss/reset": "^0.58.0",
@@ -17,7 +17,7 @@
     "artplayer-plugin-danmuku": "^5.0.1",
     "daisyui": "^3.9.4",
     "hash-wasm": "^4.11.0",
-    "idb-keyval": "^6.1.0",
+    "idb-keyval": "^6.2.1",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
