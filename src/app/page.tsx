@@ -6,7 +6,8 @@ import { themeChange } from "theme-change";
 
 async function GHList() {
   const tree_sha = await fetch(
-    "https://api.github.com/repos/xrz-cloud/blog/branches/main"
+    "https://api.github.com/repos/xrz-cloud/blog/branches/main",
+    { next: { revalidate: 3600 } }
   )
     .then((res) => res.json())
     .then((res: { commit?: { sha?: string } }) => {
@@ -15,14 +16,14 @@ async function GHList() {
   const tree = await fetch(
     "https://api.github.com/repos/xrz-cloud/blog/git/trees/" + tree_sha
   ).then((res) =>
-    res.json().then((res: { tree: { path: string; url: string }[] }) => {
+    res.json().then(async (res: { tree: { path: string; url: string }[] }) => {
       let posts_tree_url = "";
       for (const i of res.tree) {
         if (i.path === "posts") posts_tree_url = i.url;
       }
-      return fetch(posts_tree_url)
-        .then((res) => res.json())
-        .then((res) => res.tree);
+      const res_1 = await fetch(posts_tree_url);
+      const res_2 = await res_1.json();
+      return res_2.tree;
     })
   );
   let id = 0;
@@ -37,7 +38,7 @@ async function GHList() {
           </tr>
         </thead>
         <tbody>
-          {tree.map((post: { path: string }) => {
+          {await tree.map((post: { path: string }) => {
             id++;
             return (
               <tr key={post.path}>
