@@ -28,8 +28,8 @@ async function GHList() {
   );
   let id = 0;
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="table">
+    <div className="overflow-x-auto">
+      <table className="table table-zebra">
         <thead>
           <tr>
             <th></th>
@@ -64,7 +64,8 @@ async function GHList() {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    // <main className="flex min-h-screen flex-col items-center">
+    <main className="w-full break-inside-avoid">
       <h1>Nothing Here...</h1>
       <h2>
         <Link href="/toolbox" className="text-green-3">

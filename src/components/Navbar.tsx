@@ -1,23 +1,79 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import ThemeChangeBar from "@/components/ThemeChangeBar";
+// import ThemeChangeBar from "@/components/ThemeChangeBar";
+import { themeChange } from "theme-change";
 
 export default function Navbar() {
-  // useEffect(() => {
-  //   themeChange(false);
-  //   // 👆 false parameter is required for react project
-  // }, []);
+  const pathname = usePathname();
+  useEffect(() => {
+    themeChange(false);
+    // 👆 false parameter is required for react project
+  }, []);
   return (
-    <div className="navbar bg-base-100">
-      <div className="flex-1">
+    <div className="w-full navbar bg-base-100">
+      {/* (三横杠) */}
+      {/* <div className="flex-none lg:hidden">
+        <label
+          htmlFor="sidebar-drawer"
+          aria-label="open sidebar"
+          className="drawer-button btn btn-square btn-ghost"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="inline-block w-6 h-6 stroke-current"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </label>
+      </div> */}
+
+      {/* Logo */}
+      <div className="flex-none">
         <a className="btn btn-ghost normal-case text-xl">xrz</a>
       </div>
+
+      <div className="flex-1">
+        <ul className="menu menu-horizontal px-1">
+          {[
+            {
+              name: "首页",
+              path: "/",
+              icon: "i-tabler-home",
+            },
+            {
+              name: "工具箱",
+              path: "/toolbox",
+              icon: "i-tabler-tools",
+            },
+          ].map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.path}
+                className={pathname === item.path ? "active" : ""}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* 主题设置 */}
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          <li>
+          {/* <li>
             <a>Link</a>
-          </li>
+          </li> */}
           {/* <ThemeChangeBar /> */}
           <li>
             <div className="dropdown dropdown-end">
@@ -39,7 +95,7 @@ export default function Navbar() {
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <button data-set-theme="" data-act-class="ACTIVECLASS">
+                  <button data-set-theme="cupcake" data-act-class="ACTIVECLASS">
                     默认(cupcake)
                   </button>
                 </li>

@@ -10,8 +10,8 @@ const tools = [
   },
   {
     name: "局域网文件传输 | xrz",
-    desc: "making...",
-    href: "/toolbox/LocaFileTrans",
+    desc: "采用PeerJs，正在Beta测试中，已基本可用。",
+    href: "/toolbox/chat",
     external: false,
   },
   {
