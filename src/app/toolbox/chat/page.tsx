@@ -2,6 +2,7 @@
 
 import React, { Component, useEffect, useState } from "react";
 import Peer from "peerjs";
+import NoSSR from "@/components/NoSSR";
 
 function Chat() {
   const [myId, setMyId] = useState("");
@@ -9,9 +10,7 @@ function Chat() {
   const [peer, setPeer] = useState({} as Peer);
   const [mesType, setMesType] = useState(0);
   const [message, setMessage] = useState<string>("");
-  const [messageFile, setMessageFile] = useState<File | ArrayBuffer>(
-    new File([], "")
-  );
+  const [messageFile, setMessageFile] = useState<File | ArrayBuffer>();
   const [messages, setMessages] = useState<
     {
       sender: string;
@@ -21,6 +20,10 @@ function Chat() {
       };
     }[]
   >([]);
+
+  useEffect(() => {
+    setMessageFile(new File([], ""));
+  }, [messageFile]);
 
   // const [testMes, setTestMes] = useState<{ sender: string; message: File }[]>(
   //   []
@@ -80,7 +83,7 @@ function Chat() {
   // };
 
   return (
-    <>
+    <NoSSR>
       <h1>chat</h1>
       <button className="btn" onClick={init}>
         Init
@@ -164,7 +167,7 @@ function Chat() {
           );
         })} */}
       </div>
-    </>
+    </NoSSR>
   );
 }
 
