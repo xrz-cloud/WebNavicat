@@ -16,7 +16,8 @@ function Chat() {
       sender: string;
       message: {
         type: number;
-        content: string | File | ArrayBuffer;
+        content: any;
+        // content: string | File | ArrayBuffer;
       };
     }[]
   >([]);
