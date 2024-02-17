@@ -24,7 +24,7 @@ function Chat() {
 
   useEffect(() => {
     setMessageFile(new File([], ""));
-  }, [messageFile]);
+  }, []);
 
   // const [testMes, setTestMes] = useState<{ sender: string; message: File }[]>(
   //   []
