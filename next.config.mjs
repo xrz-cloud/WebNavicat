@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/api/chat/peer",
+        destination: "https://oboard.eu.org/chat/peer",
+      },
+    ];
+  },
   async redirects() {
     return [
       {
