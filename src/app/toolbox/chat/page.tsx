@@ -156,19 +156,32 @@ function P2PChat() {
       checkUserIdAvalible();
 
       try {
-        fetch("/api/chat/peer", {
+        fetch("https://oboard.eu.org/api/chat/peer", {
           // Post
           method: "post",
           body: myIdRef.current,
-        }).then((res) => {
-          res.json().then((data) => {
-            setUserList(data);
+          mode: "cors",
+        })
+          .then((res) => {
+            res.json().then((data) => {
+              setUserList(data);
+            });
+          })
+          .catch((error) => {
+            fetch("/api/chat/peer", {
+              // Post
+              method: "post",
+              body: myIdRef.current,
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                setUserList(data);
+              });
           });
-        });
       } catch (error) {
         console.log(error);
       }
-    }, 1000);
+    }, 5000);
     return () => {
       clearInterval(timer);
     };

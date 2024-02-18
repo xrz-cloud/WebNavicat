@@ -1,11 +1,29 @@
-import type { NextRequest } from "next/server";
+// import { MessageInfo, MessageStatus } from "@/models/chat/message";
 import { NextResponse } from "next/server";
 
-export async function GET(
-  request: NextRequest,
-  context: { params: { posts: string } }
-) {
-  return NextResponse.rewrite(
-    new URL("/api/chat/peer" + context.params.posts, "https://oboard.eu.org")
-  );
+let users: string[] = [];
+
+export async function GET(request: Request) {
+  return NextResponse.json(users, {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    status: 200,
+  });
+}
+
+export async function POST(request: Request) {
+  const userId = await request.text();
+
+  if (!users.includes(userId) && userId !== "") {
+    users = [...users, userId];
+  }
+
+  // 返回的是一个数组
+  return NextResponse.json(users, {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    status: 200,
+  });
 }
