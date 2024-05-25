@@ -38,6 +38,12 @@ const tools = [
     href: "https://share.xrzyun.top",
     external: true,
   },
+  {
+    name: "AniClip 番剧删减汇总 | bili-vd-bak",
+    desc: "",
+    href: "https://aniclip.xrzyun.eu.org",
+    external: true,
+  },
 ];
 
 export default function TB() {
