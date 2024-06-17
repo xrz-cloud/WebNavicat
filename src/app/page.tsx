@@ -1,8 +1,8 @@
 // "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
-import { themeChange } from "theme-change";
+// import { useEffect } from "react";
+// import { themeChange } from "theme-change";
 
 async function GHList() {
   const tree_sha = await fetch(
@@ -69,12 +69,12 @@ export default function Home() {
       <h1>Nothing Here...</h1>
       <h2>
         <Link href="https://xrzyun.eu.org" className="text-green-3">
-          现主要内容已迁移至 xlog.app
+          现主要内容已迁移至 xlog.app (点击跳转)
         </Link>
       </h2>
       <h2>
         <Link href="/toolbox" className="text-green-3">
-          工具箱
+          工具箱 (点击跳转)
         </Link>
       </h2>
       <h2>发过的Blogs</h2>
