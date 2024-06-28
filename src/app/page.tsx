@@ -66,15 +66,25 @@ export default function Home() {
   return (
     // <main className="flex min-h-screen flex-col items-center">
     <main className="w-full break-inside-avoid">
-      <h1>Nothing Here...</h1>
+      <h1>Nothing Here?</h1>
       <h2>
         <Link href="https://xrzyun.eu.org" className="text-green-3">
           现主要内容已迁移至 xlog.app (点击跳转)
         </Link>
       </h2>
       <h2>
+        <Link href="https://aniclip.xrzyun.eu.org" className="text-green-3">
+          推广：番剧删减汇总 (点击跳转)
+        </Link>
+      </h2>
+      <h2>
         <Link href="/toolbox" className="text-green-3">
           工具箱 (点击跳转)
+        </Link>
+      </h2>
+      <h2>
+        <Link href="https://home.xrzyun.eu.org" className="text-green-3">
+          本站镜像 (点击跳转)
         </Link>
       </h2>
       <h2>发过的Blogs</h2>
